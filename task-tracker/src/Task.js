@@ -16,6 +16,7 @@ const Task = prop => {
 				/>
 			</h3>
 			<p>{prop.task.day}</p>
+			<p>{`Description - ${prop.task.description}`}</p>
 		</div>
 	);
 };

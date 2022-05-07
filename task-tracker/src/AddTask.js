@@ -3,10 +3,12 @@ import { useState } from "react";
 const AddTask = prop => {
 	const [text, setText] = useState("");
 	const [day, setDay] = useState("");
+	const [description, setDescription] = useState("");
 	const [remainder, setRemainder] = useState(false);
 
 	const taskIs = event => setText(event.target.value);
 	const dayIs = event => setDay(event.target.value);
+	const descriptionIs=event=>setDescription(event.target.value);
 	const remainderIs = event => setRemainder(event.currentTarget.checked);
 	const onSubmit = event => {
 		event.preventDefault();
@@ -15,9 +17,10 @@ const AddTask = prop => {
 			alert("Please Add a Task");
 		}
 
-		prop.onAdd({ text, day, remainder });
+		prop.onAdd({ text, day, description, remainder });
 		setText("");
 		setDay("");
+		setDescription("");
 		setRemainder(false);
 	};
 
@@ -36,6 +39,16 @@ const AddTask = prop => {
 			<div className="form-control">
 				<label>Day</label>
 				<input type="text" placeholder="Add Day" value={day} onChange={dayIs} />
+			</div>
+
+			<div className="form-control">
+			<label>Description</label>
+				<input
+					type="text"
+					placeholder="Add Description"
+					value={description}
+					onChange={descriptionIs}
+				/>
 			</div>
 
 			<div className="form-control form-control-check">

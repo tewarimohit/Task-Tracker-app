@@ -10,18 +10,21 @@ export default function App() {
 			id: 1,
 			text: "Doctors Appointment",
 			day: "Feb 5th",
+			description:'For Regular checkup',
 			remainder: true,
 		},
 		{
 			id: 2,
 			text: "Meeting at school",
 			day: "Feb 6th",
+			description:'For future Goals',
 			remainder: true,
 		},
 		{
 			id: 3,
 			text: "Shopping",
 			day: "Feb 7th",
+			description:'Essential Items, Grocery',
 			remainder: false,
 		},
 	]);
@@ -40,7 +43,7 @@ export default function App() {
 		const id = Math.floor(Math.random() * 10000) + 1;
 		const newTask = { id, ...task };
 		setTasks([...tasks, newTask]);
-		// console.log(newTask);
+		
 	};
 
 	// Delete Task
